@@ -27,6 +27,7 @@ const historyAddDelete = (ele) => {
 }
 historyListLocalStorage.forEach(value => {
   let history = document.createElement('li');
+  history.setAttribute('class', 'record-item')
   historyAddDelete(history)
   history.innerText = value
   historyList.insertAdjacentElement("afterbegin", history)
@@ -71,6 +72,7 @@ recognition.addEventListener("error", (e) => {
 
 const recordMsg = (msg) => {
   let history = document.createElement('li');
+  history.setAttribute('class', 'record-item')
   historyAddDelete(history)
   const month = new Date().getMonth() + 1;
   const date = new Date().getDate();
