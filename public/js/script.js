@@ -86,11 +86,27 @@ const recordMsg = (msg) => {
   updateLocalStorage()
 }
 
+function throttled(delay, fn) {
+  let lastCall = 0;
+  return function wrapper(...args) {
+    const now = (new Date).getTime();
+    if (now - lastCall < delay) {
+      return;
+    }
+    lastCall = now;
+    return fn(...args);
+  }
+}
+
 keywords.forEach(item => {
-  item.addEventListener("click", (e) => {
+  const clickEvent = (e) => {
     const { innerText } = e.target
     recordMsg(innerText)
-  })
+  }
+
+  const throttledFunc = throttled(1000, clickEvent);
+
+  item.addEventListener("click", throttledFunc)
 })
 
 recognition.addEventListener("result", (e) => {
