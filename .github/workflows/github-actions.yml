@@ -10,3 +10,10 @@ jobs:
         node-version: 16
     - run: npm install
     - run: npm start
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        branch: 'gh-pages'
+        force: true
+        directory: '.vuepress/dist'
