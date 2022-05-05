@@ -48,7 +48,7 @@ p {
 
 section {
   margin: 0 auto 3em auto;
-  width: 500px;
+  max-width: 500px;
   padding: 45px 30px;
   border-radius: 3rem;
   box-shadow: 0.8rem 0.8rem 1.4rem var(--greyLight-2), -0.2rem -0.2rem 1.8rem var(--white);
@@ -63,6 +63,7 @@ li {
   margin-bottom: .225rem;
   padding-left: 1.25rem;
   font-weight: bold;
+  text-align: left;
 }
 li::before {
   content: '#'; color: rgba(22, 219, 147, 1);
