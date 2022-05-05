@@ -58,6 +58,8 @@ section {
 }
 ul {
   list-style: none;
+  max-width: 500px;
+  margin: auto;
 }
 li {
   font-size: 1.5rem;
